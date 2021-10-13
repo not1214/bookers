@@ -1,0 +1,27 @@
+<h1>Books</h1>
+  <table>
+    <thead>
+      <tr>
+        <th class="header">Title</th>
+        <th class="header">Body</th>
+        <th class="header"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>aaaa</td>
+        <td>aaaa</td>
+        <td>Show</td>  <td>Edit</td>  <td>Destroy</td>
+      </tr>
+    </tbody>
+  </table>
+
+<h2>New Book</h2>
+<%= form_with model:@book, url:"/books", local:true do |f| %>
+  <p>Title</p>
+  <%= f.text_field :title %>
+  <p>Body</p>
+  <%= f.text_area :body %>
+
+  <%= f.submit "Create Book" %>
+<% end %>
