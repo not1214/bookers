@@ -1,12 +1,20 @@
-<h1>Books</h1>
-  <table>
-    <thead>
-      <tr>
-        <th class="header">Title</th>
-        <th class="header">Body</th>
-        <th class="header"></th>
-      </tr>
-    </thead>
+<main>
+
+  <p class="notice">
+    <% if flash[:notice] %>
+      <%= flash[:notice] %>
+    <% end %>
+  </p>
+
+  <h1>Books</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Body</th>
+          <th></th>
+        </tr>
+      </thead>
     <tbody>
       <% @books.each do |book| %>
       <tr>
@@ -20,17 +28,38 @@
     </tbody>
   </table>
 
-<h2>New Book</h2>
-<% if @book.errors.any? %>
-  <% @book.errors.full_messages.each do |message| %>
-    <%= message %>
-  <% end %>
-<% end %>
-<%= form_with model:@book, url:"/books", local:true do |f| %>
-  <p>Title</p>
-  <%= f.text_field :title %>
-  <p>Body</p>
-  <%= f.text_area :body %>
+  <h2 id="NewBook">New Book</h2>
+  <% if @book.errors.any? %>
 
-  <%= f.submit "Create Book" %>
-<% end %>
+    <div class="error-message">
+      <h4><%= @book.errors.count %> errors prohibitted this book from being saved:</h4>
+        <ul>
+          <% @book.errors.full_messages.each do |message| %>
+            <li class="error">
+              <%= message %>
+            </li>
+          <% end %>
+        </ul>
+    </div>
+
+  <% end %>
+
+  <%= form_with model:@book, url:"/books", local:true do |f| %>
+
+    <div class="field">
+      <p>Title</p>
+      <%= f.text_field :title %>
+    </div>
+
+    <div class="field">
+      <p>Body</p>
+      <%= f.text_area :body %>
+    </div>
+    
+    <div class="field">
+      <%= f.submit "Create Book" %>
+    </div>
+
+  <% end %>
+
+</main>

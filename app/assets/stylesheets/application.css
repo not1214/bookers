@@ -14,22 +14,94 @@
  *= require_self
  */
 
+/*全体設定*/
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/*top.heml.erb*/
-
-.head {
+main {
   margin: 30px;
 }
 
+.notice {
+  color: green;
+  font-size: 14px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.field {
+  font-size: 14px;
+  margin-top: 10px;
+  display: block;
+}
+
+.link {
+  font-size: 14px;
+}
+
+.field_with_errors {
+  background-color: red;
+  display: table;
+  padding: 2px;
+}
+
+/*top.html.erb*/
+
 .body {
   font-size: 14px;
-  margin: 30px 50px;
+  margin: 30px;
 }
 
 /*index.heml.erb*/
 
+table {
+  font-size: 14px;
+}
+
+th {
+  padding-bottom: 5px;
+}
+
+td {
+  padding: 0 5px 5px 5px;
+}
+
+#NewBook {
+  margin-top: 10px;
+}
+
+.error-message {
+  border: solid 3px red;
+  background-color: #f0f0f0;
+  width: 50%;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+h4 {
+  padding: 5px 5px 5px 10px;
+  background-color: red;
+  color: #ffffff;
+}
+
+ul {
+  margin: 30px;
+  padding-left: 30px;
+}
+
+/*show.html.erb*/
+
+.show {
+  font-size: 14px;
+  margin: 0 0 30px 30px;
+}
+
+/*edit.html.erb*/
+
+.update-form {
+  margin: 10px 0;
+}
